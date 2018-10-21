@@ -1,0 +1,120 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #222;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+.content{
+	width: 100%;
+	height: 100%;
+}
+
+.stage{
+	position: relative;
+	width: 100%;
+	height: 960px;
+}
+.img-sec{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: #ddd;
+	perspective:1800;
+	-webkit-perspective:1800;
+}
+
+
+.img-figure {
+	width: 400px;
+	height: 600px;
+	margin: 0;
+	padding: 40px;
+	position: absolute;
+	box-sizing: border-box;
+	border: 1px solid #999;
+	background-color: #fff;
+	transform-style: preserve-3d;
+	cursor: pointer;
+	transform-origin: 0 50% 0;
+	transition: transform .5s ease-in-out,left .5s ease-in-out,top .5s ease-in-out;
+}
+/*.img-figure.is-inverse{
+	transform: rotateY(180deg);
+}*/
+
+.img-figure figcaption{
+	text-align: center;
+}
+.img-figure .img{
+	/*transition: .1s;*/
+	backface-visibility: hidden;
+}
+.img-figure .img-title{
+	margin-top: 20px;
+	color: #333;
+	font-size: 16px;
+}
+.img-figure .img-back{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	padding: 40px;
+	background-color: #000;
+	color: #fff;
+	overflow: hidden;
+	backface-visibility: hidden;
+	transform: rotateY(-180deg);
+	/*transition: .1s;*/
+}
+.img-figure.is-inverse{
+	transform: translate(400px) rotateY(-180deg);
+}
+.is-inverse .img-back{
+	/*transform: rotateY(0deg);*/
+}
+.is-inverse .img{
+	/*transform: rotateY(180deg);*/
+}
+
+.controller-nav{
+	position: absolute;
+	left: 0;
+	bottom: 30px;
+	width: 100%;
+	text-align: center;
+	z-index: 101;
+}
+.controller-utit {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 0 6px;
+	text-align: center;
+	cursor: pointer;
+	background-color: #aaa;
+	border-radius: 50%;
+	transform: scale(.5);
+	transition: all 0.5s;
+	vertical-align: middle;
+}
+.controller-utit.is-center{
+	transform: scale(1);
+	background-color: #888;
+	/*font-smoothing:antialiased;*/
+
+}
+.controller-utit.is-inverse {
+	background-color: #555;
+	transform: rotateY(180deg);
+}
